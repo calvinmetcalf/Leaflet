@@ -6,7 +6,8 @@ L.GeoJSON = L.FeatureGroup.extend({
 
 	initialize: function (geojson, options) {
 		L.setOptions(this, options);
-
+		//set the default style options explicitly
+		L.Util.extend(this.options.style, L.Path.prototype.options);
 		this._layers = {};
 
 		if (geojson) {
